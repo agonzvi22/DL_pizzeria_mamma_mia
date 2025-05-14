@@ -1,18 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react'
 
 const Pizza = () => {
-  const [pizza, setPizza] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [pizza, setPizza] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
   const getPizza = async () => {
     try {
-      setLoading(true);
-      const response = await fetch("http://localhost:5000/api/pizzas/p001"); 
+      setLoading(true)
+      const response = await fetch('http://localhost:5001/api/pizzas/p001') // Estoy trabajando en Mac y no me dejaba usar el puerto :5000 así que lo cambié a :5001
       if (!response.ok) {
-        throw new Error("No se pudo obtener la pizza");
+        throw new Error('No se pudo obtener la pizza')
       }
-      const data = await response.json();
+      const data = await response.json()
 
       // Extraer Datos
       const pizzaInfo = {
@@ -22,20 +22,20 @@ const Pizza = () => {
         imagen: data.img,
         descripcion: data.desc,
         id: data.id,
-      };
+      }
 
-      setPizza(pizzaInfo);
+      setPizza(pizzaInfo)
     } catch (error) {
-      console.log(error);
-      setError("No se han encontrado Pizzas");
+      console.log(error)
+      setError('No se han encontrado Pizzas')
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   useEffect(() => {
-    getPizza();
-  }, []);
+    getPizza()
+  }, [])
 
   return (
     <>
@@ -44,7 +44,7 @@ const Pizza = () => {
 
       <div className="container">
         {pizza && (
-          <div key={pizza.id} className="card m-2" style={{ width: "20rem" }}>
+          <div key={pizza.id} className="card m-2" style={{ width: '20rem' }}>
             <img
               src={pizza.imagen}
               alt={pizza.nombre}
@@ -76,7 +76,7 @@ const Pizza = () => {
         )}
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Pizza;
+export default Pizza

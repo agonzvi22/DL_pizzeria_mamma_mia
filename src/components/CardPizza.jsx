@@ -1,4 +1,4 @@
-import '../components/CardPizza.css'
+import './CardPïzza.css'
  
  const CardPizza = ({ desc, id, img, ingredients, name, price }) => {
    const capitalize = text => {
