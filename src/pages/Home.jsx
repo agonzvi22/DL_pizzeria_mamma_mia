@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react'
 import CardPizza from '../components/CardPizza'
- import Header from '../components/Header'
- 
- 
- const Home = () => {
+import Header from '../components/Header'
+
+const Home = () => {
   const [pizzas, setPizzas] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -53,6 +52,7 @@ import CardPizza from '../components/CardPizza'
           pizzas.map(pizza => (
             <CardPizza
               key={pizza.id}
+              id={pizza.id}
               name={pizza.name}
               price={pizza.price}
               ingredients={pizza.ingredients}
