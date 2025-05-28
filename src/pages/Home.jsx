@@ -10,7 +10,7 @@ const Home = () => {
   const getPizzas = async () => {
     try {
       setLoading(true)
-      const response = await fetch('http://localhost:5001/api/pizzas') // Estoy trabajando en Mac y no me dejaba usar el puerto :5000 así que lo cambié a :5001
+      const response = await fetch('http://localhost:5000/api/pizzas') 
       if (!response.ok) {
         throw new Error('No se pudieron obtener las pizzas')
       }
