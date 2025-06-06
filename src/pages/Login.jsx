@@ -4,7 +4,11 @@ import { UserContext } from '../context/UserContext'
 import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
+<<<<<<< HEAD
   const { login } = useContext(UserContext) // Obtenemos la función login del contexto
+=======
+  const { login } = useContext(UserContext)
+>>>>>>> abc47f84d94594a30216e748fbf68d10624aec1c
   const navigate = useNavigate()
   const [logeo, setLogeo] = useState({
     mail: "",
@@ -14,6 +18,14 @@ const Login = () => {
   const [errors, setErrors] = useState({});
   const [generalError, setGeneralError] = useState("");
 
+<<<<<<< HEAD
+=======
+    const handleLogin = () => {
+    login() // Llamamos la función login
+    navigate('/') // Redirige a Home ("/")
+  }
+
+>>>>>>> abc47f84d94594a30216e748fbf68d10624aec1c
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -50,7 +62,11 @@ const Login = () => {
     setErrors(newErrors);
   };
 
+<<<<<<< HEAD
   const handleResult = async e => {
+=======
+  const handleResult = (e) => {
+>>>>>>> abc47f84d94594a30216e748fbf68d10624aec1c
     e.preventDefault(); // Evitamos el refresco de la página
 
     // Verificamos si hay errores
@@ -59,6 +75,7 @@ const Login = () => {
       return;
     }
 
+<<<<<<< HEAD
      try {
       // Llamamos a la función login del contexto
       const success = await login(logeo.mail, logeo.password)
@@ -79,6 +96,17 @@ const Login = () => {
       console.error('Error durante el login:', error)
       setGeneralError('Ocurrió un error durante el login. Inténtalo de nuevo.')
     }
+=======
+    Swal.fire({
+      title: "Acceso Correcto",
+      text: "Para continuar haz click en Aceptar",
+      icon: "success",
+      confirmButtonText: "Aceptar",
+    });
+
+    // Aquí ya llamamos al handleLogin después de que todo es válido
+    handleLogin()
+>>>>>>> abc47f84d94594a30216e748fbf68d10624aec1c
   };
 
   return (

@@ -1,12 +1,16 @@
 import { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
 import { UserContext } from '../context/UserContext'
+<<<<<<< HEAD
 import axios from 'axios'
 import Swal from 'sweetalert2'
+=======
+>>>>>>> abc47f84d94594a30216e748fbf68d10624aec1c
 
 const Cart = () => {
   const { cart, addToCart, removeFromCart, totalPrice, clearCart } =
     useContext(CartContext) 
+<<<<<<< HEAD
     const { isAuthenticated } = useContext(UserContext)
   const handleSimulateSuccess = () => {
     Swal.fire({
@@ -19,6 +23,12 @@ const Cart = () => {
     })
   }
 
+=======
+const { isAuthenticated } = useContext(UserContext) // Usamos isAuthenticated en lugar de token
+ 
+  // Función para capitalizar el nombre
+  const capitalize = text => text.charAt(0).toUpperCase() + text.slice(1)
+>>>>>>> abc47f84d94594a30216e748fbf68d10624aec1c
 
   return (
     <>
@@ -40,7 +50,11 @@ const Cart = () => {
                 />
               </div>
               <div className="col align-self-center">
+<<<<<<< HEAD
                 <h6>{pizza.name}</h6>
+=======
+                <h6>{capitalize(pizza.name)}</h6>
+>>>>>>> abc47f84d94594a30216e748fbf68d10624aec1c
               </div>
               <div className="col align-self-center">
                 <p>Precio: ${pizza.price.toLocaleString('es-CL')}</p>
@@ -78,9 +92,12 @@ const Cart = () => {
             <button disabled={!isAuthenticated} className="btn btn-success m-2">
               Pagar
             </button>
+<<<<<<< HEAD
             <button className="btn btn-primary m-2" onClick={handleSimulateSuccess}>
               Simular Compra
             </button>
+=======
+>>>>>>> abc47f84d94594a30216e748fbf68d10624aec1c
             <button className="btn btn-danger" onClick={clearCart}>
               Vaciar carrito 🗑️
             </button>

@@ -10,14 +10,21 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
     "axios": "^1.9.0",
+=======
+>>>>>>> abc47f84d94594a30216e748fbf68d10624aec1c
     "bootstrap": "^5.3.6",
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.10",
     "react-dom": "^19.0.0",
     "react-router-dom": "^6.30.0",
+<<<<<<< HEAD
     "sweetalert2": "^11.19.1",
     "sweetalert2-react-content": "^5.1.0"
+=======
+    "sweetalert2": "^11.19.1"
+>>>>>>> abc47f84d94594a30216e748fbf68d10624aec1c
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

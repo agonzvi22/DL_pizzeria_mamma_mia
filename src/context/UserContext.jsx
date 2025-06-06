@@ -1,9 +1,13 @@
 import { createContext, useState, useEffect } from 'react'
+<<<<<<< HEAD
 import axios from 'axios'
+=======
+>>>>>>> abc47f84d94594a30216e748fbf68d10624aec1c
 
 const UserContext = createContext()
 
 const UserProvider = ({ children }) => {
+<<<<<<< HEAD
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [token, setToken] = useState(null)
   const [email, setEmail] = useState(null)
@@ -84,10 +88,24 @@ const UserProvider = ({ children }) => {
       console.error('Error durante registro:', error)
       return false
     }
+=======
+  const [isAuthenticated, setIsAuthenticated] = useState(true)
+
+  useEffect(() => {
+    // Simular que el usuario está logueado por defecto (puede ser `false` si prefieres)
+    const storedAuth = localStorage.getItem('auth')
+    setIsAuthenticated(storedAuth === 'true')
+  }, [])
+
+  const login = () => {
+    setIsAuthenticated(true)
+    localStorage.setItem('auth', 'true')
+>>>>>>> abc47f84d94594a30216e748fbf68d10624aec1c
   }
 
   const logout = () => {
     setIsAuthenticated(false)
+<<<<<<< HEAD
     setToken(null)
     setEmail(null)
     setUser(null) // Limpiar el perfil del usuario
@@ -110,6 +128,13 @@ const UserProvider = ({ children }) => {
         getProfile, 
       }}
     >
+=======
+    localStorage.setItem('auth', 'false')
+  }
+
+  return (
+    <UserContext.Provider value={{ isAuthenticated, login, logout }}>
+>>>>>>> abc47f84d94594a30216e748fbf68d10624aec1c
       {children}
     </UserContext.Provider>
   )
